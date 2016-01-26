@@ -4,9 +4,32 @@
 ==
 
 ## String interpolation
+
 - the "interpolation" form of one-way data binding
 ```html
 <h1>{{ title }}</h1>
+```
+
+==
+
+## Two-way data binding
+
+```html
+  <div>
+    <label>
+      One-way data binding:
+      <input type="text"
+        value="{{ hero.name }}"
+        placeholder="name">
+    </label>
+
+    <label>
+      Two-way data binding:
+      <input type="text"
+        [(ngModel)]="hero.name"
+        placeholder="name">
+    </label>
+  </div>
 ```
 
 ==
@@ -24,4 +47,7 @@
 **class**
 - For a datatype with logic and behavior beyond simple properties
 - Transpiling a class to JavaScript produces code
+
+==
+
 
