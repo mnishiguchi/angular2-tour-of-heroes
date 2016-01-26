@@ -2,34 +2,61 @@
 
   <h1>{{ title }}</h1>
 
-  <h2>
-    {{ hero.name }} details
-  </h2>
+  <ul class="heroes">
 
-  <div>
-    <label>id:</label>
-    {{ hero.id }}
-  </div>
+    <li *ngFor="#hero of heroes"
+      [class.selected]="isSelected( hero )"
+      (click)="onSelect( hero )">
 
-  <div>
-    <label>name:</label>
-    {{ hero.name }}
-  </div>
+      <span class="badge">
+        {{ hero.id }}
+      </span>
+      {{ hero.name }}
 
-  <div>
-    <label>
-      One-way data binding:
-      <input type="text"
-        value="{{ hero.name }}"
-        placeholder="name">
-    </label>
+    </li>
 
-    <label>
-      Two-way data binding:
-      <input type="text"
-        [(ngModel)]="hero.name"
-        placeholder="name">
-    </label>
+  </ul>
+
+  <!--
+    NOTE: Since the selectedHero is undefined until a hero is selected, accessing
+    its properties will cause an exception. To avoid this problem, we can
+    keep the hero detail section out of the DOM until there is a selected hero.
+   -->
+
+  <div *ngIf="selectedHero">
+
+    <h2>
+      {{ selectedHero.name }} details
+    </h2>
+
+    <div>
+      <label>id:</label>
+      {{ selectedHero.id }}
+    </div>
+
+    <div>
+      <label>name:</label>
+      {{ selectedHero.name }}
+    </div>
+
+    <div>
+      <label>
+        One-way data binding:
+        <input type="text"
+          value="{{ selectedHero.name }}"
+          placeholder="name">
+      </label>
+
+      <br>
+
+      <label>
+        Two-way data binding:
+        <input type="text"
+          [(ngModel)]="selectedHero.name"
+          placeholder="name">
+      </label>
+    </div>
+
   </div>
 
 </div><!-- /.container -->

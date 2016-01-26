@@ -1,18 +1,29 @@
 # angular2-tour-of-heroes
-- https://angular.io/docs/ts/latest/tutorial/toh-pt1.html
+- https://angular.io/docs/ts/latest/tutorial/
 
 ==
 
-## String interpolation
+## Data binding
+
+### String interpolation
 
 - the "interpolation" form of one-way data binding
 ```html
 <h1>{{ title }}</h1>
 ```
 
-==
+### The Event Binding
+- () 
+- Identifies the element’s event as the target
+- e.g., `(click)="onSelect(hero)"`
 
-## Two-way data binding
+
+### The Property Binding
+- []
+- Data flows one way from the data source to a property of class
+- e.g., `[class.selected]="hero === selectedHero"`
+
+### Two-way data binding
 
 ```html
   <div>
@@ -50,4 +61,21 @@
 
 ==
 
+## The (*) prefix
+- indicates that the element and its children **constitute a master template**.
 
+==
+
+## The # prefix
+- Creates a local template variable.
+- Can reference this variable within the template and access its properties.
+
+==
+
+## The structural directives
+- e.g., `ngIf` and `ngFor`
+- can change the structure of portions of the DOM
+- https://angular.io/docs/ts/latest/guide/structural-directives.html
+- https://angular.io/docs/ts/latest/guide/template-syntax.html#!#directives
+
+==
