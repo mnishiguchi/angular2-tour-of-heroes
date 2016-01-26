@@ -1,13 +1,30 @@
 import { Component } from 'angular2/core';
 // import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
-// Defines the AppComponent, which is the root component.
 
+/**
+ * Defines a Hero interface with id and name properties.
+ */
+interface Hero {
+
+  id: number;
+  name: string;
+
+}
+
+
+/**
+ * Defines the AppComponent, which is the root component.
+ */
 @Component({
-  selector: 'app',
-  template: '<h1>Boku-no hajimete-no Angular 2 App</h1>'
+  selector:    'app',
+  templateUrl: 'app/app.component.html',
+  styleUrls:   [ 'app/app.component.css' ]
 })
-// @RouteConfig([
-
-// ])
-export class AppComponent {}
+export class AppComponent {
+  public title = 'Tour of Heroes';
+  public hero: Hero = {
+    id:   1,
+    name: 'Windstorm'
+  }
+}
