@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>angular2-tour-of-heroes</title>
+
+  <!-- Load Google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <!-- Load Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+
+  <style>
+    html {
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background: #cdcdcd;
+      width: 100%;
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+
+  <base href="/">
+
+  <!-- 1. Load libraries -->
+  <!-- IE required polyfills, in this exact order -->
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+  <!--
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+   -->
+
+  <!-- 2. Configure SystemJS -->
+  <script>
+    System
+      .config({
+        packages: {
+          app: {
+            format:           'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+    System
+      .import( 'app/boot' )
+      .then( null, console.error.bind( console ) );
+  </script>
+</head>
+
+<body>
+
+  <app>Loading...</app>
+
+</body>
+
+</html>
