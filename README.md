@@ -29,10 +29,6 @@
   + `inputs: ['hero']`
 - the @Input() decorator
 
-
-
-
-
 ### Two-way data binding
 
 ```html

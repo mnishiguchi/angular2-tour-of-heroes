@@ -6,7 +6,7 @@ import { Hero } from './hero';
 
   selector:    'hero-detail',
   templateUrl: 'app/hero-detail.component.html',
-  styleUrls:   [],
+  styleUrls:   [ 'app/hero-detail.component.css' ],
 
   // Declare target properties.
   inputs:       [ 'hero' ]
