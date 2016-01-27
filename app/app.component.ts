@@ -1,16 +1,8 @@
 import { Component } from 'angular2/core';
 // import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
-
-/**
- * Defines a Hero interface with id and name properties.
- */
-interface Hero {
-
-  id: number;
-  name: string;
-
-}
+import { Hero } from './hero';
+import { HeroDetailComponent } from './hero-detail.component';
 
 
 /**
@@ -20,7 +12,11 @@ interface Hero {
 
   selector:    'app',
   templateUrl: 'app/app.component.html',
-  styleUrls:   [ 'app/app.component.css' ]
+  styleUrls:   [ 'app/app.component.css' ],
+
+  // A browser ignores HTML tags and attributes that it doesn't recognize. So does Angular.
+  // Register all the child components.
+  directives:  [ HeroDetailComponent ]
 
 })
 export class AppComponent {

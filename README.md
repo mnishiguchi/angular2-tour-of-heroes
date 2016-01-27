@@ -21,7 +21,17 @@
 ### The Property Binding
 - []
 - Data flows one way from the data source to a property of class
+- Must **declare a target property** to be an input property
 - e.g., `[class.selected]="hero === selectedHero"`
+
+#### How to declare a target property (a couple of ways)
+- adding an inputs array to the @Component metadata
+  + `inputs: ['hero']`
+- the @Input() decorator
+
+
+
+
 
 ### Two-way data binding
 
@@ -61,7 +71,7 @@
 
 ==
 
-## The (*) prefix
+## The * prefix
 - indicates that the element and its children **constitute a master template**.
 
 ==

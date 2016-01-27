@@ -25,37 +25,7 @@
 
   <div *ngIf="selectedHero">
 
-    <h2>
-      {{ selectedHero.name }} details
-    </h2>
-
-    <div>
-      <label>id:</label>
-      {{ selectedHero.id }}
-    </div>
-
-    <div>
-      <label>name:</label>
-      {{ selectedHero.name }}
-    </div>
-
-    <div>
-      <label>
-        One-way data binding:
-        <input type="text"
-          value="{{ selectedHero.name }}"
-          placeholder="name">
-      </label>
-
-      <br>
-
-      <label>
-        Two-way data binding:
-        <input type="text"
-          [(ngModel)]="selectedHero.name"
-          placeholder="name">
-      </label>
-    </div>
+    <hero-detail [hero]="selectedHero"></hero-detail>
 
   </div>
 
