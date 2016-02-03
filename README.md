@@ -1,5 +1,6 @@
 # angular2-tour-of-heroes
 - https://angular.io/docs/ts/latest/tutorial/
+- [Demo (my version)](http://angular2-tour-of-heroes.bitballoon.com/)
 
 ==
 
@@ -85,3 +86,26 @@
 - https://angular.io/docs/ts/latest/guide/template-syntax.html#!#directives
 
 ==
+
+## The _ prefix on private variables
+- to warn readers of our code that this variable is **not part of the component's public API**.
+
+==
+
+## Angular Dependency Injector
+
+- The Injector has a container of previously created services.
+  + Either it finds and returns a pre-existing HeroService from its container or
+  + it creates a new instance, adds it to the container, and returns it to Angular.
+
+### How to inject a service
+
+1. Inject an instance into a constructor.
+2. Registar the service to the component's providers metadata.
+
+==
+
+## The ngOnInit Lifecycle Hook
+- to keep complex logic out of the constructor, e.g., calling a server
+- The constructor is for simple initializations like wiring constructor parameters to properties. It's not for heavy lifting. 
+- [lifecycle hook methods](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html)

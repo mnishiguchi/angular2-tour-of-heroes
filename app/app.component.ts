@@ -1,8 +1,12 @@
-import { Component } from 'angular2/core';
+import {
+  Component,
+  OnInit // OnInit interface
+} from 'angular2/core';
 // import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { Hero } from './hero';
+import { Hero }                from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroService }         from './hero.service.ts';
 
 
 /**
@@ -14,17 +18,33 @@ import { HeroDetailComponent } from './hero-detail.component';
   templateUrl: 'app/app.component.html',
   styleUrls:   [ 'app/app.component.css' ],
 
+  // Register child components.
   // A browser ignores HTML tags and attributes that it doesn't recognize. So does Angular.
-  // Register all the child components.
-  directives:  [ HeroDetailComponent ]
+  directives:  [ HeroDetailComponent ],
+
+  // Register providers.
+  // The providers array tells Angular to create a fresh instance of the
+  // each service when it creates a new AppComponent
+  providers:   [ HeroService ]
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   // Expose the public properties for binding.
   public title  = 'Tour of Heroes';
-  public heroes = HEROS;
-  public selectedHero: Hero;
+  public heroes: Hero[];      // Array of Hero objects.
+  public selectedHero: Hero;  // Currently selected Hero object.
+
+  // Constructor.
+  // Inject a HeroService object.
+  constructor( private _heroService: HeroService ) { }
+
+  // Keep complex logic out of the constructor.
+  ngOnInit() {
+
+    this.getHeroes();
+
+  }
 
 
   // ---
@@ -41,25 +61,21 @@ export class AppComponent {
 
   isSelected( hero: Hero ) {
 
-    return hero == this.selectedHero;
+    return hero === this.selectedHero;
 
   }
-}
 
 
-// Define mock heroes that is an array of type Hero.
-// We would fetch this list of heroes from a web service in real life.
-const HEROS: Hero[] = [
+  // ---
+  // PRIVATE METHODS
+  // ---
 
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
 
-];
+  getHeroes() {
+
+    this.heroes = _heroService.getHeros();
+
+  }
+
+
+} // end AppComponent
