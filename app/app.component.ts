@@ -6,7 +6,7 @@ import {
 
 import { Hero }                from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService }         from './hero.service.ts';
+import { HeroService }         from './hero.service';
 
 
 /**
@@ -48,6 +48,24 @@ export class AppComponent implements OnInit {
 
 
   // ---
+  // PRIVATE METHODS
+  // ---
+
+
+  getHeroes() {
+
+    this._heroService
+      .getHeroesSlowly()
+      .then( heroes => {
+
+        this.heroes = heroes;
+
+      });
+
+  } // end getHeroes
+
+
+  // ---
   // PUBLIC METHODS
   // ---
 
@@ -62,18 +80,6 @@ export class AppComponent implements OnInit {
   isSelected( hero: Hero ) {
 
     return hero === this.selectedHero;
-
-  }
-
-
-  // ---
-  // PRIVATE METHODS
-  // ---
-
-
-  getHeroes() {
-
-    this.heroes = _heroService.getHeros();
 
   }
 

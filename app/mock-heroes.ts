@@ -2,7 +2,7 @@ import { Hero } from './hero';  // Hero class
 
 // Define mock heroes that is an array of type Hero.
 
-export const HEROS: Hero[] = [
+export const HEROES: Hero[] = [
 
     { "id": 11, "name": "Mr. Nice" },
     { "id": 12, "name": "Narco" },

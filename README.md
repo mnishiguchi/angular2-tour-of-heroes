@@ -1,6 +1,7 @@
 # angular2-tour-of-heroes
+
 - https://angular.io/docs/ts/latest/tutorial/
-- [Demo (my version)](http://angular2-tour-of-heroes.bitballoon.com/)
+- http://angular2-tour-of-heroes.bitballoon.com/
 
 ==
 
@@ -109,3 +110,16 @@
 - to keep complex logic out of the constructor, e.g., calling a server
 - The constructor is for simple initializations like wiring constructor parameters to properties. It's not for heavy lifting. 
 - [lifecycle hook methods](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html)
+
+==
+
+## [ES6 Promises](http://www.datchley.name/es6-promises/)
+
+- A promise to call us back later when the results are ready.
+- An asynchronous service does the work (somewhere) and eventually it calls our function with the results of the work or an error.
+
+==
+
+## [ES2015 arrow function ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+==
